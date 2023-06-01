@@ -10,8 +10,23 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Cidades {
+  id Int @id @default(autoincrement())
+  name String @unique
+  users  Users @relation(fields: [id], references: [id])
+}
+model Animais {
+  id Int @id @default(autoincrement())
+  name String?
+  ultimaLocalizacao String
+  users  Users @relation(fields: [id], references: [id])
+}
 model Users {
   id      Int      @id @default(autoincrement())
   email   String   @unique
   name    String?
+  rua     String
+  bairro  String
+  cidade  Cidades?
+  animais Animais[]
 }
