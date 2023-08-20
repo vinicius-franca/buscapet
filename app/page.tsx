@@ -21,11 +21,11 @@ function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
       <h1>Lista de Usuários</h1>
-        <ul>
+        {/* <ul>
           {users.map((user) => (
             <li key={user.id}>{user.name}</li>
           ))}
-        </ul>
+        </ul> */}
       </div>
     </main>
   )
