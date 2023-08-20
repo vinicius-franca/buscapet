@@ -27,7 +27,7 @@ export default async function handler(req:any, res:any) {
         });
 
         res.json({ user: newUser, error: null });
-    } catch (error) {
+    } catch (error: any) {
         res.json({ error: error.message, user: null });
     }
 }
