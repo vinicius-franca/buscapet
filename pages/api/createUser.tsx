@@ -9,7 +9,7 @@ export default async function handler(req:any, res:any) {
         bairro,
         rua,
         password,
-        cidade,
+        cidadeId,
         uf
      } = req.body;
 
@@ -21,13 +21,13 @@ export default async function handler(req:any, res:any) {
                 bairro,
                 rua,
                 password,
-                cidade,
+                cidadeId,
                 uf
             },
         });
 
-        res.json({ user: newUser, error: null });
+        res.status(201).json({ user: newUser, error: null });
     } catch (error: any) {
-        res.json({ error: error.message, user: null });
+        res.status(500).json({ error: error.message, user: null });
     }
 }

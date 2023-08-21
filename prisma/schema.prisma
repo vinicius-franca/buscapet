@@ -7,12 +7,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Cidades {
-  id   Int    @id @default(autoincrement())
-  name String @unique
+model Cidade {
+  id    Int     @id @default(autoincrement())
+  name  String  @unique
+  Users Users[]
 }
 
-model Animais {
+model Animal {
   id                Int         @id @default(autoincrement())
   name              String?
   ultimaLocalizacao String
@@ -22,16 +23,17 @@ model Animais {
 }
 
 model Users {
-  id        Int        @id @default(autoincrement())
-  email     String     @unique
+  id        Int         @id @default(autoincrement())
+  email     String      @unique
   name      String?
   bairro    String
   rua       String
   password  String
-  animais   Animais?
-  cidade    String
   uf        String
-  mensagens Mensagens?
+  cidade    Cidade?     @relation(fields: [cidadeId], references: [id])
+  animais   Animal[]
+  mensagens Mensagens[]
+  cidadeId  Int?
 }
 
 model Mensagens {
@@ -40,7 +42,7 @@ model Mensagens {
   authorId  Int
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  animaisId Int?
-  Animais   Animais? @relation(fields: [animaisId], references: [id])
+  animalId  Int?
+  Animais   Animal?  @relation(fields: [animalId], references: [id])
   author    Users    @relation(fields: [id], references: [id])
 }
