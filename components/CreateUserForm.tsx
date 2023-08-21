@@ -58,25 +58,25 @@ function CreateUserForm() {
   return (
     <div className='bg-gray-100'>
         <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4 border rounded shadow">
-        <input className="block w-full p-2 mb-2 border rounded" type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Nome" />
-        <input className="block w-full p-2 mb-2 border rounded" type="email" name="email" value={formData.email} onChange={handleChange} placeholder="E-mail" />
-        <input className="block w-full p-2 mb-2 border rounded" type="password" name="password" value={formData.password} onChange={handleChange} placeholder="Senha" />
-        <input className="block w-full p-2 mb-2 border rounded" type="text" name="rua" value={formData.rua} onChange={handleChange} placeholder="Rua" />
-        <input className="block w-full p-2 mb-2 border rounded" type="text" name="bairro" value={formData.bairro} onChange={handleChange} placeholder="Bairro" />
-        <select
-            name="cidadeId"
-            className="block w-full p-2 mb-2 border rounded"
-            value={formData.cidadeId}
-            onChange={handleChange}>
-            <option value="">Selecione a cidade</option>
-            { cidades.map((cidade:any) => (
-            <option key={cidade.id} value={cidade.id}>
-                {cidade.name}
-            </option>
-            ))}
-        </select>
-        <input className="block w-full p-2 mb-2 border rounded" type="text" name="uf" value={formData.uf} onChange={handleChange} placeholder="Estado" />
-        <button className="block w-full p-2 bg-blue-500 text-white rounded hover:bg-blue-600" type="submit">Criar Usuário</button>
+            <input className="block w-full p-2 mb-2 border rounded" type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Nome" />
+            <input className="block w-full p-2 mb-2 border rounded" type="email" name="email" value={formData.email} onChange={handleChange} placeholder="E-mail" />
+            <input className="block w-full p-2 mb-2 border rounded" type="password" name="password" value={formData.password} onChange={handleChange} placeholder="Senha" />
+            <input className="block w-full p-2 mb-2 border rounded" type="text" name="rua" value={formData.rua} onChange={handleChange} placeholder="Rua" />
+            <input className="block w-full p-2 mb-2 border rounded" type="text" name="bairro" value={formData.bairro} onChange={handleChange} placeholder="Bairro" />
+            <select
+                name="cidadeId"
+                className="block w-full p-2 mb-2 border rounded"
+                value={formData.cidadeId}
+                onChange={handleChange}>
+                <option value="">Selecione a cidade</option>
+                { cidades.map((cidade:any) => (
+                <option key={cidade.id} value={cidade.id}>
+                    {cidade.name}
+                </option>
+                ))}
+            </select>
+            <input className="block w-full p-2 mb-2 border rounded" type="text" name="uf" value={formData.uf} onChange={handleChange} placeholder="Estado" />
+            <button className="block w-full p-2 bg-blue-500 text-white rounded hover:bg-blue-600" type="submit">Criar Usuário</button>
         </form>
         {showSuccessModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
@@ -84,9 +84,9 @@ function CreateUserForm() {
                 <p className="text-green-600 text-lg font-semibold mb-2">Usuário criado com sucesso!</p>
                 <button
                     className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
-                    onClick={() => setShowSuccessModal(false)} // Fechar o modal
+                    onClick={() => setShowSuccessModal(false)}
                 >
-                OK
+                    Fechar
                 </button>
             </div>
         </div>

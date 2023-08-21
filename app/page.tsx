@@ -1,4 +1,5 @@
 "use client";
+import Navbar from '@/components/NavBar';
 import { useEffect, useState } from 'react';
 
 function Home() {
@@ -18,14 +19,14 @@ function Home() {
     fetchData();
   }, []);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-gray-200">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
       <h1>Lista de Usuários</h1>
-        {/* <ul>
-          {users.map((user) => (
+        <ul>
+          {users.map((user:any) => (
             <li key={user.id}>{user.name}</li>
           ))}
-        </ul> */}
+        </ul>
       </div>
     </main>
   )
