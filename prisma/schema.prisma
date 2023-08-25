@@ -18,7 +18,8 @@ model Animal {
   name              String?
   ultimaLocalizacao String
   encontrado        Boolean?
-  users             Users       @relation(fields: [id], references: [id])
+  userId            Int
+  users             Users       @relation(fields: [userId], references: [id])
   mensagens         Mensagens[]
 }
 
