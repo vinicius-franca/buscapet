@@ -2,13 +2,13 @@
 import { useState } from 'react'
 import Image from 'next/image'
 
-function NavLink({to, children}) {
+function NavLink(to:any, children:any) {
     return <a href={to} className={`mx-4 text-white`}>
         {children}
     </a>
 }
 
-function MobileNav({open, setOpen}) {
+function MobileNav(open:any, setOpen:any) {
     return (
         <div className={`absolute top-0 left-0 h-screen w-screen bg-green-600 transform ${open ? "-translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out filter drop-shadow-md `}>
             <div className="flex items-center justify-center filter drop-shadow-md bg-white h-20">
@@ -34,7 +34,7 @@ function MobileNav({open, setOpen}) {
     )
 }
 
-function Navbar() {
+function NavBar() {
     const [open, setOpen] = useState(false)
     return (
         <nav className="flex filter drop-shadow-md px-4 py-4 h-20 items-center bg-green-600">
@@ -74,4 +74,4 @@ function Navbar() {
     )
 }
 
-export default Navbar;
+export default NavBar;

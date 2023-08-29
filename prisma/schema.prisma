@@ -18,8 +18,8 @@ model Animal {
   name              String?
   ultimaLocalizacao String
   encontrado        Boolean?
-  userId            Int
-  users             Users       @relation(fields: [userId], references: [id])
+  userId            Int?
+  user              Users?      @relation(fields: [userId], references: [id])
   mensagens         Mensagens[]
 }
 
@@ -32,7 +32,7 @@ model Users {
   password  String
   uf        String
   cidade    Cidade?     @relation(fields: [cidadeId], references: [id])
-  animais   Animal[]
+  animals   Animal[]
   mensagens Mensagens[]
   cidadeId  Int?
 }

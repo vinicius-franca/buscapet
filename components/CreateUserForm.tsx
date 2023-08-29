@@ -47,7 +47,7 @@ function CreateUserForm() {
       });
 
       const data = await response.json();
-      if(!data.error) {
+      if(data.error) {
         setShowSuccessModal(true);
       }
     } catch (error) {
