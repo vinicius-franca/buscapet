@@ -3,9 +3,9 @@ import AnimalCard from './AnimalCard';
 
 const AnimalList = () => {
   const [animals, setAnimals] = useState([]);
-  const [selectedCity, setSelectedCity] = useState(''); // Estado local para armazenar a cidade selecionada
+  const [selectedCity, setSelectedCity] = useState(''); 
 
-  const cities = Array.from(new Set(animals.map((animal:any) => animal.cidadeId))); // Obtenha uma lista de cidades únicas dos animais
+  const cities = Array.from(new Set(animals.map((animal:any) => animal.cidadeId))); 
 
 
     useEffect(() => {
