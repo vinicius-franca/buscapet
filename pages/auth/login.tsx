@@ -2,6 +2,7 @@ import type { GetServerSidePropsContext, InferGetServerSidePropsType } from "nex
 import { getCsrfToken } from "next-auth/react"
 
 
+
 export default function SignIn({ csrfToken }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <main className="min-h-screen flex flex-col items-center justify-between  bg-gray-200">
