@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from 'react';
-import NavBar from '@/components/NavBar'
-import AnimalList from '@/components/AnimalList';
+import NavBar from '../components/NavBar'
+import AnimalList from '../components/AnimalList';
 
 function Home() {
   return (
