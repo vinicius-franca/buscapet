@@ -9,19 +9,25 @@ datasource db {
 }
 
 model Cidade {
-  id    Int     @id @default(autoincrement())
-  name  String  @unique
-  Users Users[]
+  id     Int      @id @default(autoincrement())
+  name   String   @unique
+  Users  Users[]
+  Animal Animal[]
 }
 
 model Animal {
-  id                Int         @id @default(autoincrement())
-  name              String?
-  ultimaLocalizacao String
-  encontrado        Boolean?
-  userId            Int?
-  user              Users?      @relation(fields: [userId], references: [id])
-  mensagens         Mensagens[]
+  id         Int         @id @default(autoincrement())
+  name       String?
+  foto       String?
+  encontrado Boolean?
+  userId     Int?
+  user       Users?      @relation(fields: [userId], references: [id])
+  mensagens  Mensagens[]
+  rua        String?
+  numero     String?
+  cidade     Cidade?     @relation(fields: [cidadeId], references: [id])
+  cidadeId   Int?
+  bairro     String?
 }
 
 model Users {

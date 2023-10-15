@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import { redirect } from 'next/navigation'
 import { useRouter } from 'next/router';
 
 function CreateUserForm() {
@@ -47,7 +48,7 @@ function CreateUserForm() {
       });
 
       const data = await response.json();
-      if(data.error) {
+      if(!data.error) {
         setShowSuccessModal(true);
       }
     } catch (error) {

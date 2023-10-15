@@ -18,22 +18,20 @@ export default NextAuth({
         });
         if (!user) return null;
 
-        const passwordValid = await compare(
-          credentials.password,
-          user.password
-        );
+        //TO-DO Verificar encriptação.
+        const passwordValid = credentials.password === user.password;
+
         if (!passwordValid) return null;
         return { id: user.id, email: user.email };
       },
     }),
-    
   ],
   session: {
     strategy: "jwt"
   },
   callbacks: {
     async session(session, user) {
-      session.user.id = user.id;
+      if (user) session.user.id = user.id;
       return session;
     },
     async jwt(token, user) {
