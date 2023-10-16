@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AnimalCard = ({animal}) => {
+const AnimalCard = (animal:any) => {
   const shareAnimal = () => {
     // Lógica para compartilhar o animal
   };
