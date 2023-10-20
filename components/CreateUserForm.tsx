@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { redirect } from 'next/navigation'
-import { useRouter } from 'next/router';
 
 function CreateUserForm() {
   const [formData, setFormData] = useState({
@@ -50,6 +49,7 @@ function CreateUserForm() {
       const data = await response.json();
       if(!data.error) {
         setShowSuccessModal(true);
+        redirect('/auth/login')
       }
     } catch (error) {
       console.error('Erro ao criar usuário:', error);

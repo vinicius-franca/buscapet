@@ -10,7 +10,7 @@ export default NextAuth({
     CredentialsProvider({
       credentials: {
         email: { label: "Email", type: "text" },
-        password: {  label: "Password", type: "password" },
+        password: { label: "Password", type: "password" },
       },
       async authorize(credentials, req) {
         const user = await prisma.users.findFirst({
@@ -38,6 +38,5 @@ export default NextAuth({
       if (user) token.id = user.id;
       return token;
     },
-  },
-  debug: true,
+  }
 });

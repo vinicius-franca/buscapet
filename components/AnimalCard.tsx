@@ -1,6 +1,7 @@
+import Image from 'next/image';
 import React from 'react';
 
-const AnimalCard = (animal:any) => {
+const AnimalCard = ({animal}) => {
   const shareAnimal = () => {
     // Lógica para compartilhar o animal
   };
