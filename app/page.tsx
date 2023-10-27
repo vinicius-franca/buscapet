@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from 'react';
-import NavBar from '@/components/Navbar'
+/* import NavBar from '@/components/Navbar'
 import AnimalList from '@/components/Animallist';
-
+ */
 function Home() {
   return (
     <div>
